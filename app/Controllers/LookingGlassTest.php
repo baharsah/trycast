@@ -24,6 +24,15 @@ class LookingGlassTest extends BaseController
         $data["navbar"] = view("components/dashboard/UI/navbar" , $navbar)  ; 
         $data["sidebar"] = view("components/dashboard/UI/sidebar" , $sidebar)  ; 
         $data["ctrlsidebar"] = view("components/dashboard/UI/ctrlsidebar");
+        $data["col"] = array(
+            view("components/dashboard/UI/content/col", array("size" => "col-lg-9" , "colcontents" => 
+            array(
+                view("components/dashboard/card/genCard"),
+                view("components/dashboard/card/genCard")
+
+                )
+            ))
+        );
         $data["title"] = $title ;
         return view("components/board/blankBoard" ,$data);
     }
