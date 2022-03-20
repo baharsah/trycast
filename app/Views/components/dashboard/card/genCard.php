@@ -1,12 +1,11 @@
 <div class="card card-primary card-outline">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title"><?=$cardtitle?></h5>
 
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
+                  <?=$cardcontent?>
                 </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="<?=$cardlink[0]['link']?>" class="card-link"><?=$cardlink[0]['title']?></a>
+                <a href="<?=$cardlink[1]['link']?>" class="card-link"><?=$cardlink[1]['title']?></a>
               </div>
             </div><!-- /.card -->

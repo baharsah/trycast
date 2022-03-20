@@ -10,6 +10,16 @@ class LookingGlassTest extends BaseController
     {
         $title = "Lantern Public Looking Glass Test";
 
+        $card1 = array(
+            "cardtitle" => "Looking Glass form",
+            "cardcontent" => "&nbsp;",
+            "cardlink" => array(
+                array("link" =>"#clear" , "title" => "Clear"),
+                array("link" =>"#start" , "title" => "Start")
+
+            )
+            );
+
         $navbar["search"] = view("components/dashboard/UI/navbar/search");
         $navbar["link"] = view("components/dashboard/UI/navbar/link");
         $navbar["notif"] = view("components/dashboard/UI/navbar/notif" , ['cache' => 60]);
@@ -27,8 +37,7 @@ class LookingGlassTest extends BaseController
         $data["col"] = array(
             view("components/dashboard/UI/content/col", array("size" => "col-lg-9" , "colcontents" => 
             array(
-                view("components/dashboard/card/genCard"),
-                view("components/dashboard/card/genCard")
+                view("components/dashboard/card/genCard" , $card1)
 
                 )
             ))
