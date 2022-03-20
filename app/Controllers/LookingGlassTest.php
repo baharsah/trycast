@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\PublicContoller;
 
-class LookingGlassTest extends BaseController
+class LookingGlassTest extends PublicController
 {
     public function index()
     {
