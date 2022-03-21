@@ -10,4 +10,12 @@ class Auth extends ConsumerController
     {
         //
     }
+
+    public function login(){
+
+    }
+
+    public function register(){
+        
+    }
 }
