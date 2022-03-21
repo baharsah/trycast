@@ -12,7 +12,7 @@ class Auth extends ConsumerController
     }
 
     public function login(){
-
+        return view("components/board/blankLogin");
     }
 
     public function register(){
