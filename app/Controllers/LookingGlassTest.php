@@ -8,7 +8,7 @@ class LookingGlassTest extends PublicController
 {
     public function index()
     {
-        $title = "Lantern Public Looking Glass Test";
+        $title = "Lantern | Looking Glass Test";
 
         $card1 = array(
             "cardtitle" => "Looking Glass form",
