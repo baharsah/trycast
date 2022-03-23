@@ -33,7 +33,7 @@ class LookingGlassTest extends PublicController
         $data["bread"] = view("components/dashboard/UI/breadcrumb")  ; 
         $data["navbar"] = view("components/dashboard/UI/navbar" , $navbar)  ; 
         $data["sidebar"] = view("components/dashboard/UI/sidebar" , $sidebar)  ; 
-        $data["ctrlsidebar"] = view("components/dashboard/UI/ctrlsidebar");
+        $data["ctrlsidebar"] = view("components/dashboard/UI/ctrlSidebar");
         $data["col"] = array(
             view("components/dashboard/UI/content/col", array("size" => "col-lg-9" , "colcontents" => 
             array(
