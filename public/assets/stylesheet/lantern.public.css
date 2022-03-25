@@ -1,0 +1,17 @@
+.content-wrapper , body {
+    background-image: url("/assets/images/lol.jpg") !important;
+}
+
+.login-box , .login-card-body , #nel{
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #ffffff75 !important;
+}
+
+.social-auth-links
+{
+    opacity: .75;
+}
+/* #nel {
+    background-color: rgba(255,255,255,12) !important;
+} */
