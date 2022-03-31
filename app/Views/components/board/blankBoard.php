@@ -65,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-    <?php if(ENVIRONMENT === "development") : ?>Displayed at :  <?= esc(date('H:i:sa')) ?> PHP: <?= esc(PHP_VERSION) ?> CodeIgniter: <?= esc(\CodeIgniter\CodeIgniter::CI_VERSION) ?> <?php endif ; ?> APP : <?=LANTERNVER?> SERVER : Unknown
+    <?php if(ENVIRONMENT === "development") : ?>Displayed at :  <?= esc(date('H:i:sa')) ?> PHP: <?= esc(PHP_VERSION) ?> CodeIgniter: <?= esc(\CodeIgniter\CodeIgniter::CI_VERSION) ?> <?php endif ; ?> APP : <?=TRYCAST_VER?> SERVER : Unknown
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2022 Lutfikahana Baharsah & Jaternas. Admin Panel By <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.

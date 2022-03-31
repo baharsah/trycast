@@ -47,7 +47,7 @@ class ConsumerController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-        
+        $session = \Config\Services::session();
         /**
          * FloodingPrevention Section
          */
