@@ -25,13 +25,14 @@
   <div id="nel" class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Silahkan login untuk memulai.</p>
+      <p class="login-box-msg"><?=date("h:i:s")?></p>
 
       <form action="{loginposturl}" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="text" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-user"></span>
             </div>
           </div>
         </div>
