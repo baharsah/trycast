@@ -24,7 +24,7 @@
   <!-- /.login-logo -->
   <div id="nel" class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Silahkan login untuk memulai.</p>
 
       <form action="{loginposturl}" method="post">
         <div class="input-group mb-3">
@@ -60,7 +60,7 @@
         </div>
       </form>
 
-      <div class="social-auth-links text-center mb-3">
+      <!-- <div class="social-auth-links text-center mb-3">
         <p>- OR -</p>
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
@@ -69,16 +69,16 @@
           <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
         </a>
       </div>
-      <!-- /.social-auth-links -->
+      /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="{forgoturl}">I forgot my password</a>
+        <a href="{forgoturl}">Lupa Password?</a>
       </p>
       <p class="mb-0">
-        <a href="{registerurl}" class="text-center">Register a new membership</a>
+        <a href="{registerurl}" class="text-center">Daftar sebagai Anggota baru</a>
       </p>
       <small class="mb-0">
-          V.(<?=LANTERNVER."-".ENVIRONMENT?>)
+          (v.<?=TRYCAST_VER."-".ENVIRONMENT?>)
         </small>
     </div>
     <!-- /.login-card-body -->
