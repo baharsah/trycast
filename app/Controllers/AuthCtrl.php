@@ -20,6 +20,14 @@ class AuthCtrl extends ConsumerController
     }
 
     public function register(){
+        return view("components/board/blankRegister");
+
+        
+    }
+    public function registerStrategic(){
+
+    }
+    public function loginStrategic(){
         
     }
 }

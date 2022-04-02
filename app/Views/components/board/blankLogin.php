@@ -19,7 +19,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{mainurl}"> Lantern Dashboard 
+    <a href="{mainurl}"> Trycast Dashboard 
   </div>
   <!-- /.login-logo -->
   <div id="nel" class="card">
@@ -76,10 +76,10 @@
         <a href="{forgoturl}">Lupa Password?</a>
       </p>
       <p class="mb-0">
-        <a href="{registerurl}" class="text-center">Daftar sebagai Anggota baru</a>
+        <a href="<?=base_url('auth/register')?>" class="text-center">Daftar sebagai Anggota baru</a>
       </p>
       <small class="mb-0">
-          (v.<?=TRYCAST_VER."-".ENVIRONMENT?>)
+          (v.<?=TRYCAST_VER."-".ENVIRONMENT?>) DB <?=\Config\Database::connect(null , false)->getVersion()?>
         </small>
     </div>
     <!-- /.login-card-body -->

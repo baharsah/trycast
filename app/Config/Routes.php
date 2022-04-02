@@ -33,7 +33,10 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/lg', 'LookingGlassTest::index');
-$routes->get('/auth/login' , 'Auth::login' );
+$routes->get('/auth/login' , 'AuthCtrl::login' );
+$routes->get('/auth/register' , 'AuthCtrl::register' );
+$routes->post('/auth/login' , "AuthCtrl::loginStrategic" , ['domain' => getenv("BASEURL") ]);
+$routes->post('/auth/register' , "AuthCtrl::registerStrategic" , ['domain' => getenv("BASEURL") ]);
 
 /*
  * --------------------------------------------------------------------
