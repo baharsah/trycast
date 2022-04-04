@@ -27,7 +27,6 @@ class UserModel extends Model
     protected $validationRules      = [
         'username'     => 'required|alpha_dash|min_length[4]|is_unique[users.username]',
         'password'     => 'required|min_length[8]|alpha_numeric_punct',
-        'pass_confirm' => 'required_with[password]|matches[password]',
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;

@@ -38,7 +38,8 @@ class AuthCtrl extends ConsumerController
             // Registering post variables
             $username = $this->request->getPost("username");
             $password = $this->request->getPost("password");
-            // Check where user is available
+            $rpassword = $this->request->getPost("rpassword");
+
 
             try {
                 
