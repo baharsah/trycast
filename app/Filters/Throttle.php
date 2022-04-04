@@ -25,8 +25,21 @@ class Throttle implements FilterInterface
         // per second across the entire site.
 
         // for Cloudflare, change getIPAddress to CloudflareRayID
-        if ($throttler->check(md5($request->getIPAddress()), 60, MINUTE) === false) {
+
+        // For future ratelimiting, we are using AS Number ratelimiting for block entire blocks of IP Address
+        if(getenv("CLOUDFLARE_BACKEND") === 1){
+            if ($throttler->check(md5($request->getCFRayID()), 60, MINUTE) === false) {
             return Services::response()->setStatusCode(429);
+            log_message('warning' , '{cfcode} Ratelimited' , ['cfcode' => request->getCFRayID()]);
+                 }
+                 
+            }else{ 
+
+            if ($throttler->check(md5($request->getIPAddress()), 60, MINUTE) === false) {
+                return Services::response()->setStatusCode(429);
+                log_message('warning' , '{ip} Ratelimited' , ['ip' => request->getIPAddress()]);
+            }
+
         }
     }
 
