@@ -19,7 +19,7 @@
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="/index2.html" class="h1"><b>Trycast </b>Dashboard</a>
+      <a href="<?=getenv("BRAND_HOME")?>" class="h1"><?=esc(getenv("BRAND_NAME") . " Dashboard")?>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Register a new membership</p>

@@ -19,7 +19,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{mainurl}"> Trycast Dashboard 
+    <a href="<?=getenv("BRAND_HOME")?>"> <?=esc(getenv("BRAND_NAME") . " Dashboard")?>
   </div>
   <!-- /.login-logo -->
   <div id="nel" class="card">
