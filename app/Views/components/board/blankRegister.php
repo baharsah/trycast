@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Registration Page (v2)</title>
+  <title><?=getenv('BRAND_NAME')?> | <?=lang("Info.register.title")?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -22,14 +22,14 @@
       <a href="<?=getenv("BRAND_HOME")?>" class="h1"><?=esc(getenv("BRAND_NAME") . " Dashboard")?></a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg"><?=lang('Info.register.link')?></p>
       <?php if(isset($validation)):?>
         <?php echo $validation?>
         <?php endif;?>
 
       <?=form_open('/auth/register')?>
         <div class="input-group mb-3">
-          <input type="text" name="username" class="form-control" placeholder="username">
+          <input type="text" name="username" class="form-control" placeholder="<?=lang('Auth.username')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="email">
+          <input type="email" name="email" class="form-control" placeholder="<?=lang('Auth.email')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="<?=lang('Auth.password')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="rpassword" class="form-control" placeholder="Retype password">
+          <input type="password" name="rpassword" class="form-control" placeholder="<?=lang('Auth.rpassword')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -65,13 +65,13 @@
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
+               <?=lang('Info.agree' , ['privacyLink' => '<a href="#">'.lang("Info.privacyLink").'</a>'])?> 
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="submit" class="btn btn-primary btn-block"><?=lang('Info.register.title')?></button>
           </div>
           <!-- /.col -->
         </div>
@@ -88,7 +88,7 @@
         </a>
       </div> -->
 
-      <a href="<?=base_url('auth/login')?>" class="text-center">Sudah terdaftar?</a>
+      <a href="<?=base_url('auth/login')?>" class="text-center"><?=lang("Info.login.link")?></a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

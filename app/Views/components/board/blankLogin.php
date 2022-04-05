@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title}</title>
+  <title><?=getenv('BRAND_NAME')?> | <?=lang("Info.login.title")?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,17 +19,16 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?=getenv("BRAND_HOME")?>"> <?=esc(getenv("BRAND_NAME") . " Dashboard")?>
+    <a href="<?=getenv("BRAND_HOME")?>"> <?=esc(getenv("BRAND_NAME") . " Dashboard")?></a>
   </div>
   <!-- /.login-logo -->
   <div id="nel" class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Silahkan login untuk memulai.</p>
-      <p class="login-box-msg"><?=date("h:i:s")?></p>
+      <p class="login-box-msg"><?=lang('Info.loginToStart')?></p>
 
-      <form action="{loginposturl}" method="post">
+      <?=form_open('/auth/login')?>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Email">
+          <input type="text" class="form-control" placeholder="<?=lang('Auth.username')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -37,7 +36,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="<?=lang('Auth.password')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -45,17 +44,9 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block"><?=lang("Info.login.title")?></button>
           </div>
           <!-- /.col -->
         </div>
@@ -73,10 +64,10 @@
       /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="{forgoturl}">Lupa Password?</a>
+        <!-- <a href="{forgoturl}">Lupa Password?</a> -->
       </p>
       <p class="mb-0">
-        <a href="<?=base_url('auth/register')?>" class="text-center">Daftar sebagai Anggota baru</a>
+        <a href="<?=base_url('auth/register')?>" class="text-center"><?=lang("Info.register.link")?></a>
       </p>
       <small class="mb-0">
           (v.<?=TRYCAST_VER."-".ENVIRONMENT?>) DB <?=\Config\Database::connect(null , false)->getVersion()?>
