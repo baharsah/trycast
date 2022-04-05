@@ -47,6 +47,7 @@ class ConsumerController extends Controller
         $this->request = \Config\Services::request();
         $this->db = \Config\Database::connect(null , false);
         $this->userModel = new \App\Models\UserModel();
+        $this->validation =  \Config\Services::validation();
 
         if (! $this->request->isSecure() && getenv(ENVIRONMENT) === 'production') {
             force_https();
