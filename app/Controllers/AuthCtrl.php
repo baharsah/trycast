@@ -152,5 +152,10 @@ class AuthCtrl extends ConsumerController
         ]);
         $this->validation->withRequest($this->request)->run();
 
+        $pass = $this->userModel->where('username' ,  $this->request->getPost('username'))
+        ->first();
+
+       $passcheck = password_verify($this->request->getPost('password') , $pass['password']);
+
     }
 }

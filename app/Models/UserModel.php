@@ -39,7 +39,7 @@ class UserModel extends Model
     protected $beforeUpdate   = ['hashPassword'];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
-    protected $afterFind      = ['verifyPassword'];
+    protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
@@ -53,20 +53,5 @@ class UserModel extends Model
     
 
     return $data;
-}
-
-// Mengubah value password menjadi Bool jika mencari user dengan password untuk verifikasi. 
-// Menampilkan data asli jika dinyatakan lain.
-protected function verifyPassword(array $data){
-    if (! isset($data['data']['password'])) {
-        return $data;
-    }else{
-
-    $data['data']['password'] = (password_verify($data['data']['password'], $data['result']['password']) );
-    }
-    
-
-    return $data;
-
 }
 }
