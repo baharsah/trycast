@@ -62,7 +62,7 @@ protected function verifyPassword(array $data){
         return $data;
     }else{
 
-    $data['data']['password'] = (password_verify($data['result']['password'], $data['data']['password']) );
+    $data['data']['password'] = (password_verify($data['data']['password'], $data['result']['password']) );
     }
     
 
