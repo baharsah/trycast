@@ -9,6 +9,10 @@ class CreateUser extends Migration
     public function up()
     {
         $this->forge->addField([
+            'uid' => [
+                'type' => "INT",
+                'auto_increment' => true
+            ],
             'username' => [
                 "type" => "VARCHAR",
                 'constraint' => '100',
@@ -25,6 +29,7 @@ class CreateUser extends Migration
                 "type" => "INT"
             ]
             ]);
+            $this->forge->addKey('uid', true);
             $this->forge->createTable('users');
 
 

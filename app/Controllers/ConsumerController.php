@@ -45,8 +45,8 @@ class ConsumerController extends Controller
         // Preload any models, libraries, etc, here.
         $this->session = \Config\Services::session();
         $this->request = \Config\Services::request();
-        $this->db = \Config\Database::connect(null , false);
-        $this->userModel = new \App\Models\UserModel();
+        $this->db = \Config\Database::connect();
+        $this->userModel = model('\App\Models\UserModel' , true , $this->db);
         $this->validation =  \Config\Services::validation();
 
         if (! $this->request->isSecure() && getenv(ENVIRONMENT) === 'production') {

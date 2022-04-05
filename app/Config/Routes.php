@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('LookingGlassTest');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,12 +31,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'LookingGlassTest::index');
 $routes->get('/lg', 'LookingGlassTest::index');
 $routes->get('/auth/login' , 'AuthCtrl::login' );
 $routes->get('/auth/register' , 'AuthCtrl::register' );
 $routes->post('/auth/login' , "AuthCtrl::loginStrategic"  );
 $routes->post('/auth/register' , "AuthCtrl::registerStrategic" );
+$routes->get('/dash/' , "Dashboard::Index");
 
 /*
  * --------------------------------------------------------------------

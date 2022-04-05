@@ -8,13 +8,13 @@ class UserModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'users';
-    protected $primaryKey       = 'username';
-    protected $useAutoIncrement = false;
+    protected $primaryKey       = 'uid';
+    protected $useAutoIncrement = true;
     protected $insertID         = 0;
-    protected $returnType       = 'object';
+    protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name' , 'password'];
+    protected $allowedFields    = ['username' , 'name' , 'password' , 'email'];
 
     // Dates
     protected $useTimestamps = true;
@@ -30,7 +30,7 @@ class UserModel extends Model
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+    protected $cleanValidationRules = false;
 
     // Callbacks
     protected $allowCallbacks = true;
@@ -49,8 +49,8 @@ class UserModel extends Model
         return $data;
     }
 
-    $data['data']['password_hash'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
-    unset($data['data']['password']);
+    $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+    
 
     return $data;
 }

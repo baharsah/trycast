@@ -6,6 +6,14 @@ return [
     'email' => "Alamat Surel",
     'rpassword' => "Ulang Kata Sandi",
     'terms' => "Kebijakan Privasi Pengguna",
+    /*
+    ** Success Messages
+    */
+    'registerSuccess' => "Pendaftaran Anda berhasil! Silahkan login untuk menikmati layanan kami.",
+    "registerSuccessTitle" => "Berhasil!",
+    /*
+    ** Success Messages
+    */
     // Email Errors
     'errorValidEmail' => "Alamat Surat Elektronik tidak sah.",
     'errorRequiredEmail' => "Alamat Surat Elektronik tidak boleh kosong.",
@@ -20,6 +28,7 @@ return [
     'errorMatchesPassword' => "Kata Sandi harus sama dengan yang diulang",
     // Username Errors
     'errorRequiredUsername' => "Username tidak boleh kosong",
+    'errorUsernameNotInList' => "Username tidak boleh {value} ",
     'errorUsernameCase' => "Username hanya boleh afanumerik, '-' dan '_' ",
     'errorUsernameMinLength' => "Panjang username setidaknya memiliki lebih dari sama dengan 4 (Empat) karakter.",
     // Misc. Errors

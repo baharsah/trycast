@@ -29,7 +29,11 @@ class AuthCtrl extends ConsumerController
        try{ 
         $data['data'] = true ; 
         if($this->session->getFlashdata('validation') !==null){
+            if($this->session->getFlashdata('validation') === "success"){
+                $data['validation'] = view('successAlert');
+            }else{
             $data['validation'] = $this->session->getFlashdata('validation');
+        }
         }
         return view("components/board/blankRegister" , $data);
         
@@ -44,19 +48,17 @@ class AuthCtrl extends ConsumerController
 
         if($this->request->getPost() !== NULL){
             // Registering post variables
-            $username = $this->request->getPost("username");
-            $password = $this->request->getPost("password");
-            $rpassword = $this->request->getPost("rpassword");
 
 
                 $this->validation->setRules([
                     'username' => [
-                        "rules" => 'required|alpha_dash|min_length[4]',
+                        "rules" => 'required|alpha_dash|min_length[4]|not_in_list[root,admin,super]|is_unique[users.username]',
                         "label" => 'Auth.username',
                         "errors" => [
                             "required" => 'Auth.errorRequiredUsername',
                             "min_length" => 'Auth.errorUsernameMinLength',
-                            "alpha_dash" => "Auth.errorUsernameCase"
+                            "alpha_dash" => "Auth.errorUsernameCase",
+                            'not_in_list' => "Auth.errorUsernameNotInList"
                         ]
                         ],
                     'password' => [
@@ -93,12 +95,33 @@ class AuthCtrl extends ConsumerController
                     ]
                 ]);
                 $this->validation->withRequest($this->request)->run();
-                if($this->validation->getErrors() !== null){
+                try{
+                if($this->validation->getErrors() !== []){
                     $this->session->setFlashdata('validation' ,  $this->validation->listErrors('my_list'));
-                    return redirect()->route("auth/register");
                     log_message('error' , print_r( $this->validation->getErrors()));
                     
+                     }elseif($this->validation->getErrors() == []){
+                        $dataI = [
+                            'username' => $this->request->getPost("username"),
+                            'email'    => $this->request->getPost("email"),
+                            "password" => $this->request->getPost("password"),
+                            'name' => 1,
+                            'role' => 1
+                        ];
+                  
+                     $this->userModel->insert($dataI);
+                    
+                        $this->session->setFlashdata('validation' , "success");
+                        
+
                      }
+                     }catch(\Exception $e){
+                        log_message('error', $e);
+                    }
+                    return redirect()->route("auth/register");
+                   
+
+
                 
         
 
