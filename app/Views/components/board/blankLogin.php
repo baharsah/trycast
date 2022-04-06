@@ -25,7 +25,9 @@
   <div id="nel" class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg"><?=lang('Info.loginToStart')?></p>
-
+      <?php if(isset($validation)):?>
+        <?php echo $validation?>
+        <?php endif;?>
       <?=form_open('/auth/login')?>
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="username" placeholder="<?=lang('Auth.username')?>">

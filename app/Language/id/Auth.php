@@ -19,6 +19,7 @@ return [
     'errorRequiredEmail' => "Alamat Surat Elektronik tidak boleh kosong.",
     // Password Errors
     'errorRequiredPassword' => "Kata Sandi tidak boleh kosong",
+    'errorPasswordIncorrect' => 'Kata Sandi tidak sesuai. Coba lagi.',
     'errorPasswordMinLength' => "Kata Sandi setidaknya memiliki lebih dari atau sama dengan 8 (Delapan) karakter.",
     'errorAlphanumericPunc' => 'Kata sandi harus mengandung Alfanumerik dan beberapa karakter spesial',
     // Terms Errors
@@ -28,6 +29,7 @@ return [
     'errorMatchesPassword' => "Kata Sandi harus sama dengan yang diulang",
     // Username Errors
     'errorRequiredUsername' => "Username tidak boleh kosong",
+    'errorUsernameUnavailable' => "Username tidak tersedia pada sistem kami.",
     'errorUsernameNotInList' => "Username tidak boleh {value} ",
     'errorUsernameCase' => "Username hanya boleh afanumerik, '-' dan '_' ",
     'errorUsernameMinLength' => "Panjang username setidaknya memiliki lebih dari sama dengan 4 (Empat) karakter.",

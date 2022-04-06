@@ -1,7 +1,8 @@
- - [] Login
-    - [] Verify Validation
-        - [] Throw Validation
-    - [] Verify Password
-        - [] Throw Password Validation
-    - [] Session
-    - [] Throw to Dashboard
+ - [] Login (Ongoing)
+    - [X] Verify Validation
+        - [X] Throw Validation
+        - [] Make Login Attempt
+    - [X] Verify Password
+        - [X] Throw Password Validation
+    - [X] Session
+    - [X] Throw to Dashboard
