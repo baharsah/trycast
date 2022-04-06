@@ -15,7 +15,7 @@ class AuthCtrl extends ConsumerController
         try{ 
             $data['data'] = true ; 
             if($this->session->getFlashdata('validation') !==null){
-                $data['validation'] = print_r($this->session->getFlashdata('validation'));
+                $data['validation'] = $this->session->getFlashdata('validation');
             }
             return view("components/board/blankLogin" , $data);
             
@@ -129,6 +129,53 @@ class AuthCtrl extends ConsumerController
 
     }
     public function loginStrategic(){
+        $this->validation->setRules([
+            'username' => [
+                "rules" => 'required|alpha_dash|min_length[4]|not_in_list[root,admin,super]|is_not_unique[users.username]',
+                "label" => 'Auth.username',
+                "errors" => [
+                    "required" => 'Auth.errorRequiredUsername',
+                    "min_length" => 'Auth.errorUsernameMinLength',
+                    "alpha_dash" => "Auth.errorUsernameCase",
+                    'is_not_unique' => "Auth.errorUsernameUnavailable",
+                    'not_in_list' => "Auth.errorUsernameNotInList",
+                ]
+                ],
+            'password' => [
+                'rules' => 'required|min_length[8]|alpha_numeric_punct',
+                'label' => "Auth.password",
+                "errors" => [
+                    "required" => "Auth.errorRequiredPassword",
+                    "min_length" => "Auth.errorPasswordMinLength",
+                    "alpha_numeric_punct" => "Auth.errorAlphanumericPunc",
+                ]
+            ],
+        ]);
+        $this->validation->withRequest($this->request)->run();
+
+        // Validation always return An Array even if no error defined ; 
+        if($this->validation->getErrors() == []){
+
+        // Password Validations ; 
+        $pass = $this->userModel->where('username' ,  $this->request->getPost('username'))
+        ->first();
+        $passcheck = password_verify($this->request->getPost('password') , $pass['password']);
+        // Define sessions
+        // Username and Status (Bool)
+        if($passcheck){
+            $this->session->set("username" , $this->request->getPost('username'));
+            $this->session->set('status' , true);
+            return redirect()->to(base_url('/dash'));
+        }else{
+            return redirect()->to(base_url('/auth/login'));
+            $this->session->setFlashdata('validation' , view("_errors_list" , ["errors" => [lang("Auth.errorPasswordIncorrect")] ]));
+            }
+
+        }else{
+            $this->session->setFlashdata('validation' , $this->validation->listErrors('my_list'));
+            return redirect()->to(base_url('auth/login'));
+        }
+
 
     }
 }
