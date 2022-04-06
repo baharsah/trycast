@@ -9,12 +9,6 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
-/***
- * Private Library Handler
- */
-
-// use Bahar\Panic\PanicFloodHandler
-// use Bahar\Panic\FloodThrower
 
 
 /*
@@ -38,7 +32,7 @@ class ConsumerController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ["form" , "url"];
 
     /**
      * Constructor.
@@ -47,12 +41,17 @@ class ConsumerController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-        
-        /**
-         * FloodingPrevention Section
-         */
 
         // Preload any models, libraries, etc, here.
+        $this->session = \Config\Services::session();
+        $this->request = \Config\Services::request();
+        $this->db = \Config\Database::connect();
+        $this->userModel = model('\App\Models\UserModel' , true , $this->db);
+        $this->validation =  \Config\Services::validation();
+
+        if (! $this->request->isSecure() && getenv(ENVIRONMENT) === 'production') {
+            force_https();
+        }
 
     }
 

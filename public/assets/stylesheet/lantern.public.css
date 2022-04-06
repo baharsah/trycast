@@ -1,11 +1,12 @@
 .content-wrapper , body {
-    background-image: url("/assets/images/lol.jpg") !important;
+    background-image: url("/assets/images/lol2.png") !important;
 }
 
 .login-box , .login-card-body , #nel{
     padding: 10px;
     border-radius: 50px;
     background-color: #ffffff75 !important;
+    /* background-image: inherit; */
 }
 
 .social-auth-links

@@ -7,14 +7,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?=$title?></title>
+  <title><?=getenv('BRAND_NAME')?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">  
+  <!-- sys style -->
+  <link rel="stylesheet" href="assets/stylesheet/lantern.public.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -30,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"><?=esc($title)?></h1>
+            <h1 class="m-0"><?=esc(getenv("BRAND_NAME") . " Dashboard")?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <?=$bread?>
@@ -63,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-    <?php if(ENVIRONMENT === "development") : ?>Displayed at :  <?= esc(date('H:i:sa')) ?> PHP: <?= esc(PHP_VERSION) ?> CodeIgniter: <?= esc(\CodeIgniter\CodeIgniter::CI_VERSION) ?> <?php endif ; ?> APP : <?=LANTERNVER?> SERVER : Unknown
+    <?php if(ENVIRONMENT === "development") : ?>Displayed at :  <?= esc(date('H:i:sa')) ?> PHP: <?= esc(PHP_VERSION) ?> CodeIgniter: <?= esc(\CodeIgniter\CodeIgniter::CI_VERSION) ?> <?php endif ; ?> APP : <?=TRYCAST_VER?> SERVER : Unknown
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2022 Lutfikahana Baharsah & Jaternas. Admin Panel By <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.

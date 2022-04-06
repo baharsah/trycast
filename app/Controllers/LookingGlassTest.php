@@ -8,7 +8,7 @@ class LookingGlassTest extends PublicController
 {
     public function index()
     {
-        $title = "Lantern | Looking Glass Test";
+        $title = "Trycast | Looking Glass Test";
 
         $card1 = array(
             "cardtitle" => "Looking Glass form",
@@ -37,7 +37,7 @@ class LookingGlassTest extends PublicController
         $data["col"] = array(
             view("components/dashboard/UI/content/col", array("size" => "col-lg-9" , "colcontents" => 
             array(
-                view("components/dashboard/card/genCard" , $card1)
+                view("components/dashboard/UI/alerts/redAlert" , $card1)
 
                 )
             ))
