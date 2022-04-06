@@ -27,7 +27,7 @@ class LookingGlassTest extends PublicController
 
         $sidebar["brand"] = view("components/dashboard/UI/sidebar/brand");
         $sidebar["profile"] = view("components/dashboard/UI/sidebar/profile");
-        $sidebar["sbmenu"] = view("components/dashboard/UI/sidebar/sbmenu");
+        $sidebar["sbmenu"] = view("components/dashboard/UI/sidebar/sbmenu" , ["session" => \Config\Services::session()->status]);
         $sidebar["searchutil"] = view("components/dashboard/UI/sidebar/searchUtility");
 
         $data["bread"] = view("components/dashboard/UI/breadcrumb")  ; 

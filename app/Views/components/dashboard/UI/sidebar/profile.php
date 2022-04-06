@@ -3,6 +3,12 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div> -->
         <div class="info">
-          <a href="#" class="d-block">Guest (<?=ENVIRONMENT?>)</a>
+          <a href="#" class="d-block">
+            <?php if(\Config\Services::session()->status):?>
+              <?=\Config\Services::session()->username ?>
+              <?php else:?>
+                Guest
+                <?php endif ; ?>
+                (<?=ENVIRONMENT?>)</a>
         </div>
       </div>

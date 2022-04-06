@@ -38,6 +38,12 @@ $routes->get('/auth/register' , 'AuthCtrl::register' );
 $routes->post('/auth/login' , "AuthCtrl::loginStrategic"  );
 $routes->post('/auth/register' , "AuthCtrl::registerStrategic" );
 $routes->get('/dash/' , "Dashboard::Index");
+$routes->add('/auth/logout' , function () {
+    $session = \Config\Services::session();
+    $array_items = ['username', 'status'];
+    $session->remove($array_items);
+    return redirect()->to(base_url());
+});
 
 /*
  * --------------------------------------------------------------------
