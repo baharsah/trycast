@@ -2,22 +2,25 @@
 
 namespace App\Controllers;
 
-use App\Controllers\PublicContoller;
+use App\Controllers\ConsumerController;
 
-class LookingGlassTest extends PublicController
-{
-    public function index()
-    {
+class Dashboard extends ConsumerController {
+
+
+    public function index(){
+        if($this->session->status === null){
+         return redirect()->to(base_url());
+        }
+
         $navbar["search"] = view("components/dashboard/UI/navbar/search");
         $navbar["link"] = view("components/dashboard/UI/navbar/link");
-        $navbar["notif"] = view("components/dashboard/UI/navbar/notif" , ['cache' => 60]);
-        $navbar["chat"] = view("components/dashboard/UI/navbar/chat", ['cache' => 60]);
+        $navbar["notif"] = view("components/dashboard/UI/navbar/notif" , ['cache' => 1]);
+        $navbar["chat"] = view("components/dashboard/UI/navbar/chat", ['cache' => 1]);
 
         $sidebar["brand"] = view("components/dashboard/UI/sidebar/brand");
         $sidebar["profile"] = view("components/dashboard/UI/sidebar/profile");
         $sidebar["sbmenu"] = view("components/dashboard/UI/sidebar/sbmenu" , ["session" => \Config\Services::session()->status]);
         $sidebar["searchutil"] = view("components/dashboard/UI/sidebar/searchUtility");
-
 
         $bread['breads'] = array(
             array(
@@ -47,5 +50,7 @@ class LookingGlassTest extends PublicController
             ))
         );
         return view("components/board/blankBoard" ,$data);
+
     }
+
 }
