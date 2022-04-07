@@ -7,5 +7,12 @@
     - [X] Session
     - [X] Throw to Dashboard
 - [] Dashboard
+    - [] Views
+        - [] Session-defined Dashboard
+    - [] Profile
 - [] Routing
 - [] CLI
+- [] Project
+- [] Prime
+- [] Services
+- [] Kubernetes
