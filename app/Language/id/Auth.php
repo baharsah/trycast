@@ -33,7 +33,7 @@ return [
     'errorRequiredUsername' => "Username tidak boleh kosong",
     'errorUsernameUnavailable' => "Username tidak tersedia pada sistem kami.",
     'errorUsernameNotInList' => "Username tidak boleh {value} ",
-    'errorUsernameCase' => "Username hanya boleh afanumerik, '-' dan '_' ",
+    'errorUsernameCase' => "Username hanya boleh alfanumerik, '-' dan '_' ",
     'errorUsernameMinLength' => "Panjang username setidaknya memiliki lebih dari sama dengan 4 (Empat) karakter.",
     // Misc. Errors
     'errorAuthFailed' => "Otentikasi kedalam dashboard gagal",
