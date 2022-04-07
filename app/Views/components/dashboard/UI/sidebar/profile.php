@@ -9,6 +9,6 @@
               <?php else:?>
                 Guest
                 <?php endif ; ?>
-                (<?=ENVIRONMENT?>)</a>
+                <?php if(ENVIRONMENT === 'development') : ?> (Development) <?php endif ; ?>
         </div>
       </div>
