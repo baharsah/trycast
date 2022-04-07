@@ -16,6 +16,7 @@ return [
     */
     // Email Errors
     'errorValidEmail' => "Alamat Surat Elektronik tidak sah.",
+    'errorEmailUnique' => 'Alamat Surat elektronik {value} sudah dipakai pengguna lain.',
     'errorRequiredEmail' => "Alamat Surat Elektronik tidak boleh kosong.",
     // Password Errors
     'errorRequiredPassword' => "Kata Sandi tidak boleh kosong",
@@ -28,6 +29,7 @@ return [
     'errorRequiredRPassword' => "Kata Sandi harus diulang di kolom 'Ulang Kata Sandi' ",
     'errorMatchesPassword' => "Kata Sandi harus sama dengan yang diulang",
     // Username Errors
+    'errorUsernameUnique' => "Username {value} sudah ada.",
     'errorRequiredUsername' => "Username tidak boleh kosong",
     'errorUsernameUnavailable' => "Username tidak tersedia pada sistem kami.",
     'errorUsernameNotInList' => "Username tidak boleh {value} ",

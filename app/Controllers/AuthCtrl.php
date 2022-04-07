@@ -58,7 +58,8 @@ class AuthCtrl extends ConsumerController
                             "required" => 'Auth.errorRequiredUsername',
                             "min_length" => 'Auth.errorUsernameMinLength',
                             "alpha_dash" => "Auth.errorUsernameCase",
-                            'not_in_list' => "Auth.errorUsernameNotInList"
+                            'not_in_list' => "Auth.errorUsernameNotInList",
+                            'is_unique' =>'Auth.errorUsernameUnique'
                         ]
                         ],
                     'password' => [
@@ -87,10 +88,11 @@ class AuthCtrl extends ConsumerController
                     ],
                     'email' =>[
                     "label" => "Auth.email" ,
-                    "rules" =>'required|valid_email',
+                    "rules" =>'required|valid_email|is_unique[users.email]',
                     "errors" => [
                         "valid_email" => 'Auth.errorValidEmail',
-                        "required" => 'Auth.errorRequiredEmail'
+                        "required" => 'Auth.errorRequiredEmail',
+                        'is_unique' => "Auth.errorEmailUnique"
                     ]
                     ]
                 ]);
