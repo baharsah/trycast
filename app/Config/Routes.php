@@ -21,7 +21,7 @@ $routes->setDefaultController('LookingGlassTest');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -44,6 +44,7 @@ $routes->add('/auth/logout' , function () {
     $session->remove($array_items);
     return redirect()->to(base_url());
 });
+$routes->get('dash/profile/(:any)' , "Dashboard::profile/$1");
 
 /*
  * --------------------------------------------------------------------

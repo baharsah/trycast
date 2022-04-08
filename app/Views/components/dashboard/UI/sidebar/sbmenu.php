@@ -32,10 +32,18 @@
           </li>
           <?php else: ?>
             <li class="nav-item">
-            <a href="<?=base_url('dash/profile')?>" class="nav-link">
+            <a href="<?=base_url('dash/profile/'.\Config\Services::session()->username)?>" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
               <p>
                 Profile
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=base_url('dash/mrtg')?>" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
+              <p>
+                Server MRTG
               </p>
             </a>
           </li>
