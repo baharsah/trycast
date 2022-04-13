@@ -1,4 +1,4 @@
- - [] Login (Ongoing)
+ - [] Login 
     - [X] Verify Validation
         - [X] Throw Validation
         - [] Make Login Attempt
@@ -6,3 +6,13 @@
         - [X] Throw Password Validation
     - [X] Session
     - [X] Throw to Dashboard
+- [] Dashboard
+    - [] Views
+        - [] Session-defined Dashboard
+    - [] Profile
+- [] Routing
+- [] CLI
+- [] Project
+- [] Prime
+- [] Services
+- [] Kubernetes

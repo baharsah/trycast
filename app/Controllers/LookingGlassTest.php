@@ -8,18 +8,6 @@ class LookingGlassTest extends PublicController
 {
     public function index()
     {
-        $title = "Trycast | Looking Glass Test";
-
-        $card1 = array(
-            "cardtitle" => "Looking Glass form",
-            "cardcontent" => "&nbsp;",
-            "cardlink" => array(
-                array("link" =>"#clear" , "title" => "Clear"),
-                array("link" =>"#start" , "title" => "Start")
-
-            )
-            );
-
         $navbar["search"] = view("components/dashboard/UI/navbar/search");
         $navbar["link"] = view("components/dashboard/UI/navbar/link");
         $navbar["notif"] = view("components/dashboard/UI/navbar/notif" , ['cache' => 60]);
@@ -27,22 +15,37 @@ class LookingGlassTest extends PublicController
 
         $sidebar["brand"] = view("components/dashboard/UI/sidebar/brand");
         $sidebar["profile"] = view("components/dashboard/UI/sidebar/profile");
-        $sidebar["sbmenu"] = view("components/dashboard/UI/sidebar/sbmenu");
+        $sidebar["sbmenu"] = view("components/dashboard/UI/sidebar/sbmenu" , ["session" => \Config\Services::session()->status]);
         $sidebar["searchutil"] = view("components/dashboard/UI/sidebar/searchUtility");
 
-        $data["bread"] = view("components/dashboard/UI/breadcrumb")  ; 
+
+        $bread['breads'] = array(
+            array(
+                "link" => base_url(),
+                'name' => "Rumah"
+            ),
+            array(
+                "link" => base_url("/dash"),
+                'name' => "Dashboard"
+            ),
+            array(
+                'name' => "Looking Glass"
+            )
+
+            );
+
+        $data["bread"] = view("components/dashboard/UI/breadcrumb" , $bread)  ; 
         $data["navbar"] = view("components/dashboard/UI/navbar" , $navbar)  ; 
         $data["sidebar"] = view("components/dashboard/UI/sidebar" , $sidebar)  ; 
         $data["ctrlsidebar"] = view("components/dashboard/UI/ctrlSidebar");
         $data["col"] = array(
             view("components/dashboard/UI/content/col", array("size" => "col-lg-9" , "colcontents" => 
             array(
-                view("components/dashboard/UI/alerts/redAlert" , $card1)
+                view("components/dashboard/UI/alerts/redAlert")
 
                 )
             ))
         );
-        $data["title"] = $title ;
         return view("components/board/blankBoard" ,$data);
     }
 }
