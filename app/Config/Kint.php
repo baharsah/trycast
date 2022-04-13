@@ -33,7 +33,7 @@ class Kint extends BaseConfig
     | RichRenderer Settings
     |--------------------------------------------------------------------------
     */
-    public $richTheme  = 'aante-light.css';
+    public $richTheme  = 'solarized-dark.css';
     public $richFolder = false;
     public $richSort   = Renderer::SORT_FULL;
     public $richObjectPlugins;
