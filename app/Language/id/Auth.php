@@ -6,6 +6,7 @@ return [
     'email' => "Alamat Surel",
     'rpassword' => "Ulang Kata Sandi",
     'terms' => "Kebijakan Privasi Pengguna",
+    'fullname' => "Nama Lengkap",
     /*
     ** Success Messages
     */
@@ -35,6 +36,10 @@ return [
     'errorUsernameNotInList' => "Username tidak boleh {value} ",
     'errorUsernameCase' => "Username hanya boleh alfanumerik, '-' dan '_' ",
     'errorUsernameMinLength' => "Panjang username setidaknya memiliki lebih dari sama dengan 4 (Empat) karakter.",
+    // Fullname Errors
+    'errorRequiredFullname' => "Nama Lengkap tidak boleh kosong.",
+    'errorFullnameAS' => "Nama hanya boleh huruf dan spasi",
+    'errorFullnameMin' => "Panjang nama kurang dari 4 huruf",
     // Misc. Errors
     'errorAuthFailed' => "Otentikasi kedalam dashboard gagal",
     'errorTimedOut' => 'Otoritasi sudah kedaluarsa',

@@ -37,6 +37,14 @@
           </div>
         </div>
         <div class="input-group mb-3">
+          <input type="text" name="fullname" class="form-control" placeholder="<?=lang('Auth.fullname')?>">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
           <input type="email" name="email" class="form-control" placeholder="<?=lang('Auth.email')?>">
           <div class="input-group-append">
             <div class="input-group-text">

@@ -50,53 +50,7 @@ class AuthCtrl extends ConsumerController
             // Registering post variables
 
 
-                $this->validation->setRules([
-                    'username' => [
-                        "rules" => 'required|alpha_dash|min_length[4]|not_in_list[root,admin,super]|is_unique[users.username]',
-                        "label" => 'Auth.username',
-                        "errors" => [
-                            "required" => 'Auth.errorRequiredUsername',
-                            "min_length" => 'Auth.errorUsernameMinLength',
-                            "alpha_dash" => "Auth.errorUsernameCase",
-                            'not_in_list' => "Auth.errorUsernameNotInList",
-                            'is_unique' =>'Auth.errorUsernameUnique'
-                        ]
-                        ],
-                    'password' => [
-                        'rules' => 'required|min_length[8]|alpha_numeric_punct',
-                        'label' => "Auth.password",
-                        "errors" => [
-                            "required" => "Auth.errorRequiredPassword",
-                            "min_length" => "Auth.errorPasswordMinLength",
-                            "alpha_numeric_punct" => "Auth.errorAlphanumericPunc"
-                        ]
-                    ],
-                    'rpassword' => [
-                        "rules" => "required|matches[password]",
-                        "label" => "rpassword",
-                        'errors' => [
-                            "required" => "Auth.errorRequiredRPassword",
-                            'matches' => "Auth.errorMatchesPassword"
-                        ]
-                    ],
-                    'terms' => [
-                        "rules" => "required",
-                        "label" => "Auth.terms",
-                        "errors" => [
-                            "required" => "Auth.errorTerms"
-                        ]
-                    ],
-                    'email' =>[
-                    "label" => "Auth.email" ,
-                    "rules" =>'required|valid_email|is_unique[users.email]',
-                    "errors" => [
-                        "valid_email" => 'Auth.errorValidEmail',
-                        "required" => 'Auth.errorRequiredEmail',
-                        'is_unique' => "Auth.errorEmailUnique"
-                    ]
-                    ]
-                ]);
-                $this->validation->withRequest($this->request)->run();
+                $this->validation->withRequest($this->request)->run('signup');
                 try{
                 if($this->validation->getErrors() !== []){
                     $this->session->setFlashdata('validation' ,  $this->validation->listErrors('my_list'));
@@ -107,7 +61,7 @@ class AuthCtrl extends ConsumerController
                             'username' => $this->request->getPost("username"),
                             'email'    => $this->request->getPost("email"),
                             "password" => $this->request->getPost("password"),
-                            'name' => 1,
+                            'name' => $this->request->getPost("fullname"),
                             'role' => 1
                         ];
                   
@@ -131,29 +85,7 @@ class AuthCtrl extends ConsumerController
 
     }
     public function loginStrategic(){
-        $this->validation->setRules([
-            'username' => [
-                "rules" => 'required|alpha_dash|min_length[4]|not_in_list[root,admin,super]|is_not_unique[users.username]',
-                "label" => 'Auth.username',
-                "errors" => [
-                    "required" => 'Auth.errorRequiredUsername',
-                    "min_length" => 'Auth.errorUsernameMinLength',
-                    "alpha_dash" => "Auth.errorUsernameCase",
-                    'is_not_unique' => "Auth.errorUsernameUnavailable",
-                    'not_in_list' => "Auth.errorUsernameNotInList",
-                ]
-                ],
-            'password' => [
-                'rules' => 'required|min_length[8]|alpha_numeric_punct',
-                'label' => "Auth.password",
-                "errors" => [
-                    "required" => "Auth.errorRequiredPassword",
-                    "min_length" => "Auth.errorPasswordMinLength",
-                    "alpha_numeric_punct" => "Auth.errorAlphanumericPunc",
-                ]
-            ],
-        ]);
-        $this->validation->withRequest($this->request)->run();
+        $this->validation->withRequest($this->request)->run('login');
 
         // Validation always return An Array even if no error defined ; 
         if($this->validation->getErrors() == []){
