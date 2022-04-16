@@ -50,7 +50,7 @@ class AuthCtrl extends ConsumerController
             // Registering post variables
 
 
-                $this->validation->withRequest($this->request)->run('signup');
+                $this->validation->withRequest($this->request)->run(NULL , 'signup');
                 try{
                 if($this->validation->getErrors() !== []){
                     $this->session->setFlashdata('validation' ,  $this->validation->listErrors('my_list'));
@@ -85,7 +85,7 @@ class AuthCtrl extends ConsumerController
 
     }
     public function loginStrategic(){
-        $this->validation->withRequest($this->request)->run('login');
+        $this->validation->withRequest($this->request)->run(NULL , 'login');
 
         // Validation always return An Array even if no error defined ; 
         if($this->validation->getErrors() == []){
