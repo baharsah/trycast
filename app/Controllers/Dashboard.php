@@ -90,7 +90,7 @@ class Dashboard extends ConsumerController {
            $data["col"] = array(
                view("components/dashboard/UI/content/col", array("size" => "col-md-3" , "colcontents" => 
                array(
-                   view("components/dashboard/UI/content/profileCard" , ['name' => $this->userModel->where('username', $user)->first()['name'] , 'uname' => $user ])
+                   view("components/dashboard/UI/content/profileCard" , ['datap' => $this->userModel->where('username', $user)->first() , 'uname' => $user ])
    
                    )
                )),

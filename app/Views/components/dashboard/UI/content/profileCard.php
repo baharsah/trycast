@@ -7,9 +7,9 @@
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center"><?=$name?></h3>
+                <h3 class="profile-username text-center"><?=$datap['name']?></h3>
 
-                <p class="text-muted text-center">@<?=$uname?></p>
+                <p class="text-muted text-center">@<?=$datap['username']?></p>
 <!-- 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">

@@ -224,19 +224,19 @@
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label"><?=lang("Auth.fullname")?></label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" value="<?=$name?>" placeholder="<?=lang("Auth.name")?>">
+                          <input type="text" class="form-control" id="inputName" value="<?=$datap['name']?>" placeholder="<?=lang("Auth.name")?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label"><?=lang("Auth.email")?></label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="<?=lang("Auth.email")?>">
+                          <input type="email" class="form-control" id="inputEmail" value="<?=$datap['email']?>" placeholder="<?=lang("Auth.email")?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputName2" class="col-sm-2 col-form-label"><?=lang("Auth.username")?></label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="<?=lang("Auth.username")?>">
+                          <input type="text" class="form-control" value="<?=$datap['username']?>" id="inputName2" placeholder="<?=lang("Auth.username")?>">
                         </div>
                       </div>
                       <!-- <div class="form-group row">
