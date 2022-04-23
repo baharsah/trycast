@@ -1,0 +1,150 @@
+
+
+#--------------------------------------------------------------------
+# ENVIRONMENT
+# Silahkan bagian ini untuk di Uncomment jika perlu.
+# Ini dibutuhkan saat local development. tetapi,
+# tidak digunakan saat production
+#--------------------------------------------------------------------
+   ## Brand Name
+   # Jika anda ingin menggunakan brand sendiri, silahkan edit bagian ini
+    BRAND_NAME = Trycast
+    BRAND_LOGO = 0
+    BRAND_HOME = https://trycast.baharsah.my.id/
+   # ## Basic Envs
+    CI_ENVIRONMENT = development
+    BASEURL = https://8080-baharsah-trycast-ud0ca1m05em.ws-us40.gitpod.io/
+   # KUBERNETES_ENDPOINTS = 0
+   # # isikan ini jika anda perlu menggunakan fitur ini. biarkan pada 
+   # # Default Value jika anda tidak ada concern untuk mengembangkannya.
+   # BUNNYCDN_TOKEN = 0
+   # CLOUDNS_TOKEN = 0
+   # STORAGE_SDN = 0
+   # PAYMENT_SDN = 0
+   # # Merubah bagian ini akan menyebabkan dev server tidak dapat membuat 
+   # # throttling. biarkan bagian ini pada default value
+    CLOUDFLARE_TOKEN = 0
+    CLOUDFLARE_BACKEND = 0
+   # # Cloudflare Throttle Definitions
+    CLOUDFLARE_THROTTLE = 0
+
+   ##########################################################
+   # Bagian ini adalah environment yang ditetapkan sistem
+   # Silahkan rubah HANYA JIKA anda memerlukannya
+   ##########################################################
+
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
+
+ app_baseURL = ${BASEURL}
+# app_forceGlobalSecureRequests = false
+
+# app_sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
+# app_sessionCookieName = 'ci_session'
+# app_sessionExpiration = 7200
+# app_sessionSavePath = null
+# app_sessionMatchIP = false
+# app_sessionTimeToUpdate = 300
+# app_sessionRegenerateDestroy = false
+
+# app_CSPEnabled = false
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+
+#  database_default_hostname = localhost
+#  database_default_database = lantern
+#  database_default_username = root
+# #  database_default_password =
+# database_default_DBDriver = MySQLi
+#  database_default_DBPrefix = lt_
+
+# database_tests_hostname = localhost
+# database_tests_database = ci4
+# database_tests_username = root
+# database_tests_password = root
+# database_tests_DBDriver = MySQLi
+# database_tests_DBPrefix =
+
+#--------------------------------------------------------------------
+# CONTENT SECURITY POLICY
+#--------------------------------------------------------------------
+
+# contentsecuritypolicy_reportOnly = false
+# contentsecuritypolicy_defaultSrc = 'none'
+# contentsecuritypolicy_scriptSrc = 'self'
+# contentsecuritypolicy_styleSrc = 'self'
+# contentsecuritypolicy_imageSrc = 'self'
+# contentsecuritypolicy_base_uri = null
+# contentsecuritypolicy_childSrc = null
+# contentsecuritypolicy_connectSrc = 'self'
+# contentsecuritypolicy_fontSrc = null
+# contentsecuritypolicy_formAction = null
+# contentsecuritypolicy_frameAncestors = null
+# contentsecuritypolicy_frameSrc = null
+# contentsecuritypolicy_mediaSrc = null
+# contentsecuritypolicy_objectSrc = null
+# contentsecuritypolicy_pluginTypes = null
+# contentsecuritypolicy_reportURI = null
+# contentsecuritypolicy_sandbox = false
+# contentsecuritypolicy_upgradeInsecureRequests = false
+
+#--------------------------------------------------------------------
+# COOKIE
+#--------------------------------------------------------------------
+
+# cookie_prefix = ''
+# cookie_expires = 0
+# cookie_path = '/'
+# cookie_domain = ''
+# cookie_secure = false
+# cookie_httponly = false
+# cookie_samesite = 'Lax'
+# cookie_raw = false
+
+#--------------------------------------------------------------------
+# ENCRYPTION
+#--------------------------------------------------------------------
+
+# encryption_key = hex2bin:5ad1825be822202d58a7244c9d2b115abbe06e6c8e1b9923bd585265e56909ef189b2e7ec02cb5e59ddb1ad976a9b7f8819e68e58779a24aca1537d5581b9fa10989822b7fa4c024e03263762de6198fe10b79142ea26d40006b3439453865f48547f81c7b781edde64a50baa01a9bc1145f12a94b0b2b91fde1c9618a53d76f6dce63dd44af3582f233e71b52710c3be6e2e3be3c05988033a99d34abc4e8077d0ffcc89d0ee589d886bda016ca15a2670d1ea9dffb92d5063fa5d354997f2852ece6fc2d4fd37ba7bee6e343df12d5f590ebc01fdf1561ca4e13377fae8a755ab5495036583e35879628afcab80f45da0b38466af2bdf17caf839d8e5c9d88
+# encryption_driver = OpenSSL
+# encryption_blockSize = 16
+# encryption_digest = SHA512
+
+#--------------------------------------------------------------------
+# HONEYPOT
+#--------------------------------------------------------------------
+
+# honeypot_hidden = 'true'
+# honeypot_label = 'Fill This Field'
+# honeypot_name = 'honeypot'
+# honeypot_template = '<label>{label}</label><input type="text" name="{name}" value=""/>'
+# honeypot_container = '<div style="display:none">{template}</div>'
+
+#--------------------------------------------------------------------
+# SECURITY
+#--------------------------------------------------------------------
+
+# security_csrfProtection = 'cookie'
+# security_tokenRandomize = false
+# security_tokenName = 'csrf_token_name'
+# security_headerName = 'X-CSRF-TOKEN'
+# security_cookieName = 'csrf_cookie_name'
+# security_expires = 7200
+# security_regenerate = true
+# security_redirect = true
+# security_samesite = 'Lax'
+
+#--------------------------------------------------------------------
+# LOGGER
+#--------------------------------------------------------------------
+
+# logger_threshold = 4
+
+#--------------------------------------------------------------------
+# CURLRequest
+#--------------------------------------------------------------------
+
+# curlrequest_shareOptions = true
